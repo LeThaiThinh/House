@@ -23,15 +23,18 @@ public class SelectionManager : MonoBehaviour
             var selection = hit.transform;
             if (selection.CompareTag(selectableTag))
             {
-
+                
                 var selectionRenderer = selection.GetComponent<Renderer>();
+                defaultMaterial = selectionRenderer.material;
                 if (selectionRenderer != null)
                 {
                     selectionRenderer.material = highlightMaterial;
 
                 }
+                
                 _selection = selection;
             }
+            
         }    
     }
 }
